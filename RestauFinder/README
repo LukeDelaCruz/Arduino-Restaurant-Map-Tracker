@@ -1,0 +1,77 @@
+Name: Harpreet Saini; ID: 1504108
+Name: Luke Patrick Dela Cruz; ID: 1504816
+CMPUT 274 Fa17
+
+Accessories:
+* Adafruit ILI9341 Breakout (the touchscreen display + SD)
+* Joystick
+* Approximately 15 wires of varying lengths are needed
+
+Included Files:
+* complexrestaufinder.cpp
+* lcd_image.h
+* lcd_image.cpp
+* mapconvert.h
+* mapcovert.cpp
+* sorting.h
+* sorting.cpp
+* Makefile
+* README
+
+Usage instructions:
+1. Connect the Arduino to the PC using an A-B style USB cable.
+2. Ensure that the Arduino is using the proper serial port (/dev/ttyACM0 or -ACM1).
+3. In the directory containing the files, use commands "make upload && serial-mon"
+to upload the code to the Arduino and view the serial monitor.
+
+* How to use the rating selector:
+1. Select a rating from 1-5 or no ratings at all.
+	>Side note: You can cancel your choice by clicking it again and also the program forces only one choice.
+	>Side note: The program allows will only highlight the rating you chose, and counts it as the minimum
+							rating such that any ratings that are greater are included in the list and ratings below that
+							are removed from the list.
+	>Side note: The program remembers your option from mode 0 after leaving mode 1 and returning back to mode 0.
+2. Move the cursor to the desired location.
+3. Click the joystick to generate a unique list of restaurants sorted not only by their distance but also rating.
+4. Enjoy.
+
+Notes:
+* Thanks to the lab help room people for their helpful insights.
+
+Assumptions:
+* Cursor flickers during motion
+* You cannot move up and down the list of restaurants until the list has be fully made
+* You cannot move the cursor until the screen has fully loaded
+
+Extra features/implementations outside of the exercise:
+* None at this time
+
+Issues with the program:
+* Not all functions were separated into different files because they hold many variables which causes many problems when linking them
+
+Wiring instructions:
+* Wiring: from bottom to top on the right side (the side with the pins).
+	Board Pin <---> Arduino Pin
+	===========================
+	GND             GND
+	Vin             5V
+	3Vo             NOT CONNECTED
+	CLK             52
+	MISO            50
+	MOSI            51
+	CS              10
+	D/C             9
+	RST             NOT CONNECTED
+	Lite            NOT CONNECTED
+	Y+              A2 (analog pin)
+	X+              4  (digital pin)
+	Y-              5  (digital pin)
+	X-              A3 (analog pin)
+	IM0 - IM3       NOT CONNECTED (they expect a 3.3v signal, DON'T CONNECT!)
+	CCS             6
+	CD              NOT CONNECTED
+
+* Joystick pins:
+	#define JOYSTICK_VERT  A1 // Analog pin A1 should connect to pin VRx
+	#define JOYSTICK_HORIZ A0 // Analog pin A0 should connect to pin VRy
+	#define JOYSTICK_SEL   2  // Digital pin 2 should connect to pin SW

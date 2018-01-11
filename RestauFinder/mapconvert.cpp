@@ -1,3 +1,4 @@
+// supporting class code
 #include <Arduino.h>
 #include "mapconvert.h"
 

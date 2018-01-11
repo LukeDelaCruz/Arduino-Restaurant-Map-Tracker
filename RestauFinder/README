@@ -6,14 +6,14 @@ Accessories:
 * Approximately 15 wires of varying lengths are needed
 
 Included Files:
-* complexrestaufinder.cpp
+* complexrestaufinder.cpp [main file that was requested to be removed]
 * lcd_image.h
 * lcd_image.cpp
 * mapconvert.h
 * mapcovert.cpp
-* sorting.h
+* sorting.h 
 * sorting.cpp
-* Makefile
+* Makefile [REMOVED as this won't even compile anymore]
 * README
 
 Usage instructions:
